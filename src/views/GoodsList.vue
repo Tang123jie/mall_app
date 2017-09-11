@@ -1,0 +1,106 @@
+<template>
+	<div>
+		<nav-header></nav-header>
+		<nav-bread></nav-bread>
+		<div class="accessory-result-page accessory-page">
+			<div class="container">
+				<div class="filter-nav">
+					<span class="sortby">买买买：</span>
+					<a href="javascript:void(0)" class="default cur">所有</a>
+					<a href="javascript:void(0)" class="price">价格
+						<svg class="icon icon-arrow-short">
+							<use xlink:href="#icon-arrow-short"></use>
+						</svg>
+					</a>
+					<a href="javascript:void(0)" class="filterby stopPop">快点买</a>
+				</div>
+				<div class="accessory-result">
+					<!-- filter -->
+					<div class="filter stopPop" id="filter">
+						<dl class="filter-price">
+							<dt>二狗子:</dt>
+							<dd>
+								<a href="javascript:void(0)">所有</a>
+							</dd>
+							<dd>
+								<a href="javascript:void(0)">赵兴川</a>
+							</dd>
+							<dd>
+								<a href="javascript:void(0)">赵二川</a>
+							</dd>
+							<dd>
+								<a href="javascript:void(0)">赵三川</a>
+							</dd>
+							<dd>
+								<a href="javascript:void(0)">大狗子</a>
+							</dd>
+						</dl>
+					</div>
+
+					<!-- search result accessories list -->
+					<div class="accessory-list-wrap">
+						<div class="accessory-list col-4">
+							<ul>
+								<li v-for="(item,index) in goodsList">
+									<div class="pic">
+										<a href="#"><img v-bind:src="'static/'+item.productImage" alt=""></a>
+									</div>
+									<div class="main">
+										<div class="name">{{ item.productName }}</div>
+										<div class="number">{{ item.productId }}</div>
+										<div class="price">{{ item.productPrice }}</div>
+										<div class="btn-area">
+											<a href="javascript:;" class="btn btn--m">加入购物车</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<nav-footer></nav-footer>
+	</div>
+</template>
+
+<script>
+	import './../assets/css/base.css'
+	import './../assets/css/product.css'
+	import NavHeader from '@/components/NavHeader.vue'
+	import NavFooter from '@/components/NavFooter.vue'
+	import NavBread from '@/components/NavBread.vue'
+	import axios from 'axios'
+	export default {
+		data() {
+			return {
+				goodsList: []
+			}
+		},
+		components: {
+			NavHeader,
+			NavFooter,
+			NavBread
+		},
+		mounted: function() {
+			this.getGoodsList();
+		},
+		methods: {
+			getGoodsList() {
+				axios.get("/goods").then(result => {
+					var res = result.data;
+					this.goodsList = res.result;
+				})
+			}
+		}
+	}
+</script>
+
+<style>
+	.number{
+		font-weight: 600;
+		font-size: 20px;
+		float: right;
+	}
+</style>
