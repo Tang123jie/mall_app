@@ -6,33 +6,15 @@
 			<div class="container">
 				<div class="filter-nav">
 					<span class="sortby">买买买：</span>
-					<a href="javascript:void(0)" class="default cur">所有</a>
-					<a href="javascript:void(0)" class="price">价格
-						<svg class="icon icon-arrow-short">
-							<use xlink:href="#icon-arrow-short"></use>
-						</svg>
-					</a>
-					<a href="javascript:void(0)" class="filterby stopPop">快点买</a>
+					<a href="javascript:void(0)">快点买</a>
 				</div>
 				<div class="accessory-result">
 					<!-- filter -->
 					<div class="filter stopPop" id="filter">
 						<dl class="filter-price">
 							<dt>二狗子:</dt>
-							<dd>
-								<a href="javascript:void(0)">所有</a>
-							</dd>
-							<dd>
-								<a href="javascript:void(0)">赵兴川</a>
-							</dd>
-							<dd>
-								<a href="javascript:void(0)">赵二川</a>
-							</dd>
-							<dd>
-								<a href="javascript:void(0)">赵三川</a>
-							</dd>
-							<dd>
-								<a href="javascript:void(0)">大狗子</a>
+							<dd v-for="price in priceAll">
+								<a href="javascript:void(0)">{{ price.startPrice }} -- {{ price.endPrice }}</a>
 							</dd>
 						</dl>
 					</div>
@@ -75,7 +57,20 @@
 	export default {
 		data() {
 			return {
-				goodsList: []
+				goodsList: [],
+				priceAll: [{
+						startPrice: '0.00',
+						endPrice: '500'
+					},
+					{
+						startPrice: '500',
+						endPrice: '1000'
+					},
+					{
+						startPrice: '1000',
+						endPrice: '2000'
+					}
+				]
 			}
 		},
 		components: {
@@ -98,7 +93,7 @@
 </script>
 
 <style>
-	.number{
+	.number {
 		font-weight: 600;
 		font-size: 20px;
 		float: right;
