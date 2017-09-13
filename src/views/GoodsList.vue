@@ -78,6 +78,14 @@
 					{
 						startPrice: '1000',
 						endPrice: '2000'
+					},
+					{
+						startPrice: '2000',
+						endPrice: '4000'
+					},
+					{
+						startPrice: '4000',
+						endPrice: '8000'
 					}
 				],
 				priceChecked:'all'

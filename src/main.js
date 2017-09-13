@@ -7,6 +7,7 @@ import VueLazyLoad from 'vue-lazyload'
 
 Vue.config.productionTip = false
 
+//懒加载
 Vue.use(VueLazyLoad,{
 	loading:'static/loading-svg/loading-bars.svg'
 })
