@@ -2,7 +2,7 @@
 	<div>
 		<nav-header></nav-header>
 		<div class="cart_t">
-		<span>购物车页面</span>
+		<span>banner</span>
 		</div>		
 		<nav-footer></nav-footer>
 	</div>
