@@ -66,16 +66,6 @@
 			"productName": "苹果7s",
 			"productPrice": 8888,
 			"productImage": "12.jpg"
-		}, {
-			"productId": "00013",
-			"productName": "苹果7s",
-			"productPrice": 8888,
-			"productImage": "13.jpg"
-		}, {
-			"productId": "00014",
-			"productName": "苹果7s",
-			"productPrice": 8888,
-			"productImage": "14.jpg"
 		}
 	]
 }

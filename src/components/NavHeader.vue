@@ -1,15 +1,16 @@
 <template>
+
 <div>
-		<div class="top">
+		<div class = "top">
 			
 		</div>
-		<div class="nav">
+		<div class = "nav">
 			<ul>
-				<li>Mac</li>
-				<li>iPad</li>
-				<li>iPhone</li>
-				<li>Watch</li>
-				<li>Music</li>
+				<li> Mac </li>
+				<li> iPad </li>
+				<li> iPhone </li>
+				<li>观看</li>
+				<li>音乐</li>
 				<li>技术支持</li>
 			</ul>
 		</div>
@@ -20,6 +21,10 @@
 </script>
 
 <style>
+*{
+  margin:0;
+  padding:0;
+}
 	.top{
 		background: #444;
 		width: 100%;
