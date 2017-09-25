@@ -12,6 +12,8 @@
   "dependencies": {
     "axios": "^0.16.2",
     "ejs": "^2.5.7",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
     "njs": "0.0.2",
     "vue": "^2.4.2",
     "vue-lazyload": "^1.1.3",
