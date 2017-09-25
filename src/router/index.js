@@ -13,7 +13,10 @@ export default new Router({
 			name: 'GoodsList',
 			components: {
 				default:GoodsList
-			}
+			},
+			meta: {
+				requireAuth: true,
+			}	
 		},
 		{
 			path:'/cart',
