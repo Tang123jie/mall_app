@@ -55,7 +55,6 @@
 	    
 	    .foot_img{
 	    	display:block;
-	    	padding-top:2px;
 	    	img{
 	    		width: 28px;
 	    		height: 28px;

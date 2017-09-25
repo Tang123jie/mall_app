@@ -1,14 +1,7 @@
 <template>
      <div>
 	 <nav-header></nav-header>
-        <div class="center">
-		<tr>
-		<td v-for="(value,key,index) in memberDetail">{{ key }}</td>
-		</tr>
-		<tr>
-		<td v-for="(value,key,index) in memberDetail">{{ value }}</td>
-		</tr>
-		</div>
+       <router-link to="/goodlist">主页</router-link>
 	<nav-footer></nav-footer>	
      </div>
 </template>
@@ -21,15 +14,6 @@
 	import NavBread from '@/components/NavBread.vue'
 	import axios from 'axios'
 	export default {
-		created(){
-			this.memberDetail = {
-				name:'tangjie',
-				age:20,
-				address:"山东省潍坊市",
-				tel:"18364615315"
-			}
-
-		},
 		data() {
 			return{
 				   memberDetail : {} 
@@ -45,11 +29,6 @@
 
 
 <style>
-.center{
-	width:800px;
-	height:600px;
-	border:solid black 1px;
-	margin:20px  auto;
-}
+
 
 </style>

@@ -33,8 +33,7 @@
 										<div class="number">{{ item.productId }}</div>
 										<div class="price">{{ item.productPrice }}</div>
 										<div class="btn-area">
-											<!--<router-link to="/cart" class="btn btn--m">加入购物车</router-link>-->
-											<a href="#" class="btn btn--m">加入购物车</a>
+											<router-link to="/cart" class="btn btn--m">购买</router-link>
 										</div>
 									</div>
 								</li>
