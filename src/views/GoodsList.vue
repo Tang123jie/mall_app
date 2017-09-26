@@ -5,7 +5,7 @@
 		<div class="accessory-result-page accessory-page">
 			<div class="container">
 				<input type="text" class="sousuo" placeholder="搜索从这里开始...">
-				<button class="an">搜索</button>
+			   
 				<div class="accessory-result">
 					<!-- filter -->
 					<div class="filter stopPop" id="filter">
@@ -110,19 +110,12 @@
 		float: right;
 	}
 	.sousuo{
-		width:1000px;
-		margin:60px 0;
+		width:990px;
+		margin:60px auto;
 	}
-	.an{
-		width:90px;
-		height:48px;
-		border:solid 1px black;
-		background-color:#f2f2f2;
-	}
-	.an:hover{
-		background-color:#e6e6e6;
-	}
+	
 	.container{
 		margin-bottom:80px;
 	}
+	
 </style>

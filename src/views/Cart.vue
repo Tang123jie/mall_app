@@ -2,12 +2,10 @@
      <div>
 	 <nav-header></nav-header>
         <div class="center">
-		<tr>
-		<td v-for="(value,key,index) in memberDetail">{{ key }}</td>
-		</tr>
-		<tr>
-		<td v-for="(value,key,index) in memberDetail">{{ value }}</td>
-		</tr>
+			<select v-model="selected">
+			<option v-for="option in options" v-bind:value="option.value">{{ option.text }}</option>
+			</select>
+			<span>{{ selected }}</span>
 		</div>
 	<nav-footer></nav-footer>	
      </div>
@@ -21,18 +19,15 @@
 	import NavBread from '@/components/NavBread.vue'
 	import axios from 'axios'
 	export default {
-		created(){
-			this.memberDetail = {
-				name:'tangjie',
-				age:20,
-				address:"山东省潍坊市",
-				tel:"18364615315"
-			}
-
-		},
+		
 		data() {
 			return{
-				   memberDetail : {} 
+				   selected:'a',
+				   options:[
+					   {text:'one',value:'a'},
+					   {text:'two',value:'b'},
+					   {text:'three',value:'c'}
+					   ]
 			}
 		},
 		components: {

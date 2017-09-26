@@ -9,6 +9,7 @@
 	  <input type="password" placeholder="请输入密码" v-model="password">
 	  <button>登录</button>
 	  <span v-on:click="ToRegister">没有账号?马上注册</span>
+	  <router-link to="/goodlist" class="nologin">游客登录</router-link>
 	  </div>
 	  <div class="register_wrap" v-show="showRegister">
 	  <h3>注册</h3>
@@ -98,6 +99,9 @@ span{
 }
 span:hover{
 	color:#41b883;
+}
+.nologin{
+	display:block;
 }
 
 </style>
