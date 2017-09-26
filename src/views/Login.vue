@@ -1,7 +1,23 @@
 <template>
      <div>
 	 <nav-header></nav-header>
-       <router-link to="/goodlist">主页</router-link>
+	 <img src="../assets/logo.png" >
+      <div class="login_wrap" v-show="showLogin">
+	  <h3>登录</h3>
+	  <p v-show="showtishi">{{ tishi }}</p>
+	  <input type="text" placeholder="请输入用户名" v-model="username">
+	  <input type="password" placeholder="请输入密码" v-model="password">
+	  <button>登录</button>
+	  <span v-on:click="ToRegister">没有账号?马上注册</span>
+	  </div>
+	  <div class="register_wrap" v-show="showRegister">
+	  <h3>注册</h3>
+	  <p v-show="showtishi">{{ tishi }}</p>
+	  <input type="text" placeholder="请输入用户名" v-model="newUsername">
+	  <input type="text" placeholder="请输入密码" v-model="newPassword">
+	  <button>注册</button>
+	  <span v-on:click="Tologin">已有账号?马上登录</span>
+	  </div>
 	<nav-footer></nav-footer>	
      </div>
 </template>
@@ -16,9 +32,16 @@
 	export default {
 		data() {
 			return{
-				  name:'',
-				  pwd:'',
-				  error:''
+				 showLogin:true,
+				 showRegister:false,
+				 showtishi:false,
+				 tishi:'',
+				 username:'',
+				 password:'',
+				 newUsername:'',
+				 newPassword:''
+
+
 			}
 		},
 		components: {
@@ -26,34 +49,55 @@
 			NavFooter,
 			NavBread
 		},
-		computed:{
-			user(){
-				return this.$store.state.user
-			}
-		},
 		methods:{
-			isLogin:function(){
-				this.$http.get('http://localhost:3000/users?username='+this.name+'&password='+this.pwd).then((response)=>{
-					if(response.body != null & response.body.length>0){
-						this.$store.commit('isLogin',response.body[0]);
-						this.name='';
-						this.ped='';
-						this.$router.push({path:'main'})
+			ToRegister:function(){
 
-					}else{
-						alert('请输入正确的用户名和密码!!!');
-						this.name='';
-						this.pwd='';
-					}
-				}).then((error)=>this.error=error)
+			},
+            Tologin:function(){
 
 			}
 		}
+		
 	}
 </script>
 
 
 <style>
-
+.login-wrap{
+	text-align:center;
+}
+input{
+	display:block;
+	width:350px;
+	height:45px;
+	line-height:45px;
+	margin:0 auto;
+	margin-bottom:5px;	
+	border:solid 1px #888;
+	padding:10px;
+	box-sizing:border-box;
+	outline:none;
+}
+p{
+	color:red;
+}
+button{
+	display:block;
+	width:350px;
+	height:45px;
+	line-height:45px;
+	margin:0 auto;
+	border:none;
+	background-color:#41b883;
+	color:#fff;
+	font-size:16px;
+	margin-bottom:5px;	
+}
+span{
+	cursor:pointer;
+}
+span:hover{
+	color:#41b883;
+}
 
 </style>
