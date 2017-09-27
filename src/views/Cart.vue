@@ -2,12 +2,13 @@
      <div>
 	 <nav-header></nav-header>
         <div class="center">
-			<select v-model="selected">
-			<option v-for="option in options" v-bind:value="option.value">{{ option.text }}</option>
-			</select>
-			<span>{{ selected }}</span>
+			 <img src="../assets/logo.png" >
+			 <p>
+				 商品详情 商品详情 商品详情 商品详情 商品详情<br /> 商品详情 商品详情 商品详情 商品详情 商品详情<br />  
+				 商品详情 商品详情 商品详情 商品详情 商品详情 <br /> 商品详情 商品详情 商品详情 商品详情 商品详情 商品详情
+			 </p>
+			 <router-link to="/" >去结算</router-link>
 		</div>
-	<nav-footer></nav-footer>	
      </div>
 </template>
 
@@ -23,11 +24,7 @@
 		data() {
 			return{
 				   selected:'a',
-				   options:[
-					   {text:'one',value:'a'},
-					   {text:'two',value:'b'},
-					   {text:'three',value:'c'}
-					   ]
+				
 			}
 		},
 		components: {
